@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Portfolio Website by Krishield Kyle Santoyo">
+    <meta name="keywords" content="Krishield Kyle Santoyo Portfolio, Portfolio">
+    <meta name="author" content="Krishield Kyle Santoyo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="assets/img/K.png">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Krishield Kyle Santoyo</title>
+</head>
+<body onresize="resizeFunc()">
+    <!-- Image Viewer Start-->
+    <!-- <div id="imageViewerContainer">
+        <div id="curImage">
+            <div id="curImageDiv">
+                <img src="assets/img//work/bookstore/bookstore_1.jpg" alt="">
+            </div>
+        </div>
+        <div id="slideImage">
+            test2
+        </div>
+    </div> -->
+    <!-- Image Viewer End -->
+    <nav id="navbar">
+        <a href="#intro" id="headTitle">Welcome To Krishield's Portfolio</a>
+        <div class="spacer"></div>
+        <div id="navOptions">
+            <div class="spacer"></div>
+            <a href="#intro" class="options">Home</a>
+            <a href="#exp" class="options">Work Experiences</a>
+            <a href="#skills" class="options">Skills</a>
+            <a href="#work" class="options">Portfolio</a>
+            <!-- <a href="#education" class="options">Educational Background</a> -->
+            <a href="#about" class="options">About</a>
+        </div>
+        <div id="hamburger">
+            <div class="hamLine"></div>
+        </div>
+    </nav>
+    <div id="sidebar" class="sidebarOpen">
+        <img id="sideAvatar" src="assets/avatar/profile.jpg" alt="Profile">
+        <div id="sideNavOptions">
+            <a href="#intro" class="options">Home</a>
+            <a href="#exp" class="options">Work Experiences</a>
+            <a href="#skills" class="options">Skills</a>
+            <a href="#work" class="options">Portfolio</a>
+            <!-- <a href="#education" class="options">Educational Background</a> -->
+            <a href="#about" class="options">About</a>
+        </div>
+    </div>
+    <div id="blocker"></div>
+    <section id="intro">
+        <div class="info">
+            <p class="fullname">Krishield Kyle <span>Santoyo</span></p>
+            <div id="forteDiv">
+                <div class="forte">
+                    <p>OUAF Developer</p>
+                </div>
+                <div class="forte">
+                    <p>Java Developer</p>
+                </div>
+                <div class="forte">
+                    <p>Web Developer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="exp">
+        <h1 class="titles">WORK EXPERIENCES</h1>
+        <div id="expList">
+            <div class="expItems">
+                <div class="expTitleDiv">
+                    <p class="expTitle">Senior Java Developer</p>
+                    <div class="spacer"></div>
+                    <p class="expCompany">Collabera Digital (SM Retail Inc)</p>
+                </div>
+                <div class="expDesc">
+                    <h4>API Integration and Creation</h4>
+                    <ul>
+                        <li>
+                          Added and modified REST APIs using Spring MVC and Spring Security.
+                        </li>
+                        <li>
+                          Integrated third-party travel booking REST APIs such as Ventrata and Rezdy for creating and canceling travel bookings.
+                        </li>
+                        <li>
+                          Reshaped third-party API responses into Smartvisit’s in-house API response format to enable a unified approach across multiple REST API sources.
+                        </li>
+                        <li>
+                          Documented new APIs and related business logic for maintainability and knowledge sharing.
+                        </li>
+                        <li>
+                          Used GitHub for code versioning and collaborative development.
+                        </li>
+                      </ul>
+                      <h4>Webshop</h4>
+                      <span>A website developed for customers and admin</span>
+                      <h4>Main Stack Used</h4>
+                      <ul>
+                        <li>
+                          <strong>Frontend:</strong> Next.js, TypeScript, Tailwind CSS
+                        </li>
+                        <li>
+                          <strong>Backend:</strong> Java, Spring Boot, Spring MVC, REST API, Spring Security, Oracle SQL, Redis
+                        </li>
+                        <li>
+                          <strong>Versioning Tools:</strong> GitHub, FogBugz
+                        </li>
+                        <li>
+                          <strong>Deployment:</strong> Jenkins, Oracle Cloud
+                        </li>
+                      </ul>
+                      <ul style="list-style-type: none;">
+                          <li><h4>Customer Side</h4></li>
+                          <li>This is used by the customers to buy tickets to a specific attraction and initiate payment</li>
+                          <li><h4>Contributions</h4></li>
+                          <li><ul>
+                            <li>
+                              Created functionality where the UI dynamically displays a set of fields based on the selected attraction. Field types (TextField, TextAreaField, SingleSelectField, Numeric, Dropdown, Time, etc.) are generated from the booking API response. Implemented field-level validation using react-hook-form and Zod.
+                            </li>
+                            <li>
+                              Developed functionality to create a Cart object, store it in Redis via Spring Boot REST API, and save the Cart ID in the browser’s localStorage. Implemented Zustand for global state management to ensure cart data is accessible across the entire application.
+                            </li>
+                            <li>
+                              Built a page to collect customer booking and billing information (name, email, contact number, etc.) with validation using react-hook-form and Zod.
+                            </li>
+                            <li>
+                              Implemented a payment page integrating Stripe Payment API. Used ExpressCheckoutElement to enable Google Pay and Apple Pay (when supported) and PaymentElement for manual card entry.
+                            </li>
+                            <li>
+                              Developed a webhook API triggered by Stripe after payment completion. This initiates Order creation in the backend using Spring Boot, Spring Data JPA, and Oracle SQL, and triggers a Server-Side Event (SSE) notification tied to the Cart ID.
+                            </li>
+                            <li>
+                              Implemented Server-Side Events (SSE) to allow the frontend to subscribe after payment initiation and receive real-time updates once order processing is completed.
+                            </li>
+                            <li>
+                              Created a Success page to notify customers that their transaction has been successfully completed.
+                            </li>
+                            <li>
+                              Conducted product investigations on slow-running APIs to identify performance bottlenecks.
+                            </li>
+                            <li>
+                              Created technical design and process flow documentation for reference and maintenance.
+                            </li>
+                            <li>
+                              Conducted demos and walkthroughs of the application for executives.
+                            </li>
+                          </ul>
+                          </li>
+                          <li><h4>Admin Side</h4></li>
+                          <li>This is used by Smartvisit’s Admin to configure products, see list of orders etc.</li>
+                          <li><h4>Contributions</h4></li>
+                          <li>
+                            <ul>
+                                <li>
+                                  Developed REST APIs to retrieve all Shops (with filters and pagination), create new Shops, and update existing Shops using Spring Boot, Spring MVC, and Spring Data JPA. Implemented the same API design pattern for other entities such as Discounts, Products, and more.
+                                </li>
+                                <li>
+                                  Created a REST API to return Shop performance metrics (active shops, inactive shops, top-performing shop, lowest-performing shop, highest growth rate, and lowest growth rate) based on date filters using Spring Boot, Spring MVC, Spring Data JPA, and Oracle SQL.
+                                </li>
+                                <li>
+                                  Developed a REST API to return specific Shop statistics such as growth rate and number of orders using Spring Boot, Spring Data JPA, and Oracle SQL.
+                                </li>
+                                <li>
+                                  Built a UI page displaying a paginated and filterable list of Shops, with functionality to create, update, and set a Shop to inactive. Implemented form validation using react-hook-form. Created similar management pages for Discounts, Products, and other entities.
+                                </li>
+                                <li>
+                                  Developed a UI feature allowing users to configure processing fees per transaction for each Shop in the webshop.
+                                </li>
+                                <li>
+                                  Created a dashboard UI page displaying Shop metrics, including total number of Shops, highest and lowest sales per Shop, and Shop-specific statistics (e.g., number of orders), with date-based filtering capabilities.
+                                </li>
+                                <li>
+                                  Built a UI page showing a paginated and filterable list of Orders, with functionality to view specific Orders, update Order status, and export filtered results to CSV. Implemented form validation using react-hook-form.
+                                </li>
+                                <li>
+                                  Created technical design and process flow documentation for maintainability and knowledge transfer.
+                                </li>
+                                <li>
+                                  Conducted demos and walkthroughs of the application for executives.
+                                </li>
+                              </ul>
+                          </li>
+                      </ul>
+                      <h4>CSC</h4>
+                      <span>A website developed for Smartvisit’s CSRs.</span>
+                      <h4>Main Stack Used</h4>
+                      <ul>
+                        <li>
+                          <strong>Frontend:</strong> Next.js, TypeScript, Tailwind CSS
+                        </li>
+                        <li>
+                          <strong>Backend:</strong> Java, Spring Boot, Spring MVC, REST API, Spring Security, Oracle SQL, Redis
+                        </li>
+                        <li>
+                          <strong>Versioning Tools:</strong> GitHub, FogBugz
+                        </li>
+                        <li>
+                          <strong>Deployment:</strong> Jenkins, Oracle Cloud
+                        </li>
+                      </ul>
+                      <ul style="list-style-type: none;">
+                          <li>
+                              <h4>Contributions</h4>
+                          </li>
+                          <li>
+                            <ul>
+                                <li>
+                                  Developed REST APIs to retrieve a paginated and filterable list of Customers and specific Customer details using Spring Boot, Spring MVC, Spring Data JPA, and Oracle SQL. Applied the same API design pattern for other entities such as Notifications, Bookings, and more.
+                                </li>
+                                <li>
+                                  Built a UI page displaying a paginated and filterable list of Customers, allowing users to view detailed Customer information, including bookings and tickets, with functionality to resend selected ticket(s) via email.
+                                </li>
+                                <li>
+                                  Integrated Google Maps to configure in-app Notifications, including latitude, longitude, and radius settings.
+                                </li>
+                                <li>
+                                  Utilized Google Maps integration for Smartvisit’s product Jrnyz to pin multiple stop locations within a single Attraction.
+                                </li>
+                                <li>
+                                  Created a UI page to manage configured Notifications, including update and delete functionalities.
+                                </li>
+                                <li>
+                                  Integrated DeepL API to enable automatic translation of sentences into multiple languages and developed a UI to support this feature.
+                                </li>
+                                <li>
+                                  Created technical design and process flow documentation for reference and maintenance.
+                                </li>
+                                <li>
+                                  Conducted demos and walkthroughs of the application for executives.
+                                </li>
+                              </ul>
+                              
+                          </li>
+                      </ul>
+                </div>
+                <div class="spacer"></div>
+                <div class="expTitleDiv">
+                    <div class="spacer"></div>
+                    <p class="expCompany">April 2024 - February 2026 </p>
+                </div>
+            </div>
+            <div class="expItems">
+                <div class="expTitleDiv">
+                    <p class="expTitle">Senior Java Developer</p>
+                    <div class="spacer"></div>
+                    <p class="expCompany">Collabera Digital (SM Retail Inc)</p>
+                </div>
+                <div class="expDesc">
+                    <h4>ETAP</h4>
+                    <span>A Spring Boot application that will expose API to ETAP machine for bill payments and top-up services. The machines are placed in a convenience store in the Philippines called Alfamart.</span>
+                    <h4>Main Stack Used</h4>
+                    <ul>
+                        <li>Backend - Java, Spring Boot, Spring MVC, REST API, Spring Security, MSSQL</li>
+                        <li>Versioning Tool – Github and SVN</li>
+                        <li>Deployment – SM Retail In-house server</li>
+                    </ul>
+                    <h4>Contributions</h4>
+                    <ul>
+                        <li>
+                          Led a 2-person team in developing REST APIs to integrate SM Retail Inc’s existing REST APIs for bills payment and top-up services (GCash, PayMaya, Maynilad, Smart, Manila Water, etc.) using Spring Boot, Spring MVC, Spring Security, Spring Data JPA, and Maven.
+                        </li>
+                        <li>
+                          Conducted client meetings to align and clarify business and technical requirements.
+                        </li>
+                        <li>
+                          Automatically documented REST APIs using Swagger for easier API reference and testing.
+                        </li>
+                        <li>
+                          Implemented JWT (JSON Web Token) for secure authentication and authorization.
+                        </li>
+                        <li>
+                          Developed and enhanced new and existing reports using JasperReports.
+                        </li>
+                        <li>
+                          Modified SM Retail Inc’s existing system UI built with JSP and Struts2.
+                        </li>
+                        <li>
+                          Created technical design and process flow documentation for reference and maintenance.
+                        </li>
+                        <li>
+                          Conducted application demos and walkthroughs for executives and clients.
+                        </li>
+                      </ul>
+                      
+                </div>
+                <div class="spacer"></div>
+                <div class="expTitleDiv">
+                    <div class="spacer"></div>
+                    <p class="expCompany">September 2023 - March 2024 </p>
+                </div>
+            </div>
+            <div class="expItems">
+                <div class="expTitleDiv">
+                    <p class="expTitle">Senior Consultant</p>
+                    <div class="spacer"></div>
+                    <p class="expCompany">Oracle PH Corporation</p>
+                </div>
+                <div class="expDesc">
+                    <h4>Main Stack Used</h4>
+                    <ul>
+                        <li>Backend – Java, OUAF, Spring Boot, Oracle SQL</li>
+                        <li>Versioning Tool – Bitbucket, SVN, SourceTree, Jira</li>
+                        <li>Deployment – Jenkins</li>
+                    </ul>
+                    <h4>Financial and Health Care Services</h4>
+                    <ul>
+                        <li>
+                          As an Oracle Revenue Management and Billing (ORMB) Consultant, my role is to modify ORMB to align with the client’s business rules and meet their expectations.
+                        </li>
+                        <li>
+                          Financial Services is the main product of our system, where we provide Health Care Services under an ASO structure.
+                        </li>
+                        <li>
+                          We use OUAF, Java, Oracle SQL, and JavaScript as our main technologies.
+                        </li>
+                        <li>
+                          Created Unit Test Plans to guide client-side testers and other developers in testing my deliverables.
+                        </li>
+                        <li>
+                          Act as Scrum Team Developer Lead: receive tasks from the onshore lead, distribute them to team members, conduct knowledge transfers, create technical designs per user story, and perform code reviews.
+                        </li>
+                        <li>
+                          Assist clients and testers during testing phases and support production issues when they arise.
+                        </li>
+                        <li>
+                          Follow Agile Scrum methodology to ensure fast-paced development and accurate tracking of deliverables.
+                        </li>
+                        <li>
+                          Participate in Sprint Planning, Daily Stand-ups, and other Scrum ceremonies.
+                        </li>
+                        <li>
+                          Conducted boot camps for new hires to familiarize them with ORMB and OUAF.
+                        </li>
+                      </ul>
+                      
+                    
+                    </div>
+                <div class="spacer"></div>
+                <div class="expTitleDiv">
+                    <div class="spacer"></div>
+                    <p class="expCompany">July 15, 2019 - September 8, 2023 </p>
+                </div>
+            </div>
+            <div class="expItems">
+                <div class="expTitleDiv">
+                    <p class="expTitle">Intern</p>
+                    <div class="spacer"></div>
+                    <p class="expCompany">Palm Solutions Inc.</p>
+                </div>
+                <p class="expDesc">
+                    <ul>
+                        <li>Acted as a developer for our operations team.</li>
+                        <li>Developing admin dashboards (web site) using NodeJs and ReactJs as the main tech stack.</li>
+                    </ul> 
+                <div class="spacer"></div>
+                <div class="expTitleDiv">
+                    <div class="spacer"></div>
+                    <p class="expCompany">August, 2018 - November, 2018</p>
+                </div>
+            </div>
+            <div class="expItems">
+                <div class="expTitleDiv">
+                    <p class="expTitle">Sales Utility Clerk</p>
+                    <div class="spacer"></div>
+                    <p class="expCompany">Star Appliance Center Inc.</p>
+                </div>
+                <p class="expDesc">Assist Customers to their desired item and also suggest other items. Checking the inventory every end of the day.</p>
+                <div class="spacer"></div>
+                <div class="expTitleDiv">
+                    <div class="spacer"></div>
+                    <p class="expCompany">May, 2016 - August, 2016</p>
+                </div>
+            </div>
+            <div class="expItems">
+                <div class="expTitleDiv">
+                    <p class="expTitle">Intern</p>
+                    <div class="spacer"></div>
+                    <p class="expCompany">Pamzeth Computer Dynamics</p>
+                </div>
+                <p class="expDesc">Handle other clerical task given by the technician. Assist Customers.</p>
+                <div class="spacer"></div>
+                <div class="expTitleDiv">
+                    <div class="spacer"></div>
+                    <p class="expCompany">November, 2014 - February, 2015</p>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+    </section>
+    <section id="skills">
+        <h1 class="titles">SKILLS</h1>
+        <div id="skillDescDiv">
+            <ul>
+                <li><p class="skillDesc">Capable of developing Webservices (REST API) using Java, Spring Boot, JPA, Maven.</p></li>
+                <li><p class="skillDesc">Has a good knowledge in some development technologies like NextJS, ReactJs, ExpressJS, Typescript,
+                    Redux, JavaScript (Node JS), CSS, Tailwind CSS and HTML.</p></li>
+                <li><p class="skillDesc">Has a good understanding in some database technology like MySQL, OracleSql, MongoDB and Redis for
+                    temporary storage.</p></li>
+                <li><p class="skillDesc">Has a good knowledge on the Oracle Utilities Application Framework (Java).</p></li>
+                <li><p class="skillDesc">Has a good knowledge in Oracle Revenue Management and Billing (ORMB) in Financial Services line of
+                    business</p></li>
+                <li><p class="skillDesc">Has a good knowledge in Object Oriented Programming</p></li>
+                <li><p class="skillDesc">Capable of developing reports using Jasper Report.</p></li>
+                <li><p class="skillDesc">Capable of using versioning tools like Github, bitbucket or SVN.</p></li>
+                <li><p class="skillDesc">Has a good exposure on a development methodology like Agile Scrum.</p></li>
+                <li><p class="skillDesc">Has a good skill in designing a database (ERD).</p></li>
+            </ul>
+            <!-- <i>Confidence Measurement: From 1 - 10 (1 is the lowest and 10 is the highest):</i> -->
+        </div>
+        <!-- <div id="skillDiv">
+            <div class="skillCol">
+                <div class="skillSize">
+                    <h3>NodeJs</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 60%;">
+                            6
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>ExpressJs</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 60%;">
+                            6
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>ReactJs</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 60%;">
+                            6
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>Redux</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 55%;">
+                            5.5
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>Java</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 70%;">
+                            7
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>MongoDB</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 30%;">
+                            3
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>MySQL</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 50%;">
+                            5
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>OracleSQL</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 50%;">
+                            5
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>Servlet/JSP</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 40%;">
+                            4
+                        </div>
+                    </div>
+                </div> 
+                <div class="skillSize">
+                    <h3>Spring Data JPA</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 50%;">
+                            5
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>Spring Core</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 40%;">
+                            4
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="skillCol">
+                <div class="skillSize">
+                    <h3>Spring Security</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 30%;">
+                            3
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>Spring Boot</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 50%;">
+                            5
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>Spring MVC</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 50%;">
+                            5
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>Maven</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 50%;">
+                            5
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>HTML5</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 80%;">
+                            8
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>CSS3</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 80%;">
+                            8
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>Bootstrap 4</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 60%;">
+                            6
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>Frontend Javascript</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 80%;">
+                            8
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>Jquery</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 50%;">
+                            5
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>GIT</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 50%;">
+                            5
+                        </div>
+                    </div>
+                </div>
+                <div class="skillSize">
+                    <h3>REST API</h3>
+                    <div class="loading">
+                        <div class="progress" style="width: 80%;">
+                            8
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </section>
+    <section id="work">
+        <h1 class="titles">PORTFOLIO</h1>
+        <div id="workDiv">
+            <div class="workCateg">
+                <!-- <h3>Desktop Application</h3> -->
+                <div class="workList">
+                    <div class="workItem" style="background-image: url(assets/img/work/bookstore/bookstorecover.jpg)">
+                        <div class="workBlocker">
+                            <div class="workItemTitle">
+                                <p>ACT Bookstore</p>
+                                <div class="workDescDiv">
+                                    <p class="workDesc">
+                                        <b>Description:</b>
+                                        <br/>
+                                        <br/>
+                                        &nbsp&nbsp&nbsp&nbsp&nbspFinal project for subject OOP1, this is an inventory system of BSIT books. The system can add, edit, view, delete and sell books to the users.
+                                        <br/>
+                                        <br/>
+                                        <b>Technology Used:</b>
+                                        <span>Java</span>
+                                    </p>
+                                </div>
+                                <div class="workItemOptions">
+                                    <div class="spacer"></div>
+                                    <!-- <button class="showImageBtn">Images</button> -->
+                                    <button class="detailsBtn">Details</button>
+                                    <div class="spacer"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="workItem" style="background-image: url(assets/img/work/barangay/barangaycover.jpg)">
+                        <div class="workBlocker">
+                            <div class="workItemTitle">
+                                <p>Barangay Record Management for Brgy. Sta. Elena Hagonoy Bulacan</p>
+                                <div class="workDescDiv">
+                                    <p class="workDesc">
+                                        <b>Description:</b>
+                                        <br/>
+                                        <br/>
+                                        &nbsp&nbsp&nbsp&nbsp&nbspThe main objective of this project is to provide barangay Sta. Ilena a barangay information system. Providing their staffs an error free experience in keeping their citizen’s record, an information system that manages their data efficiently, a pleasant experience to the users using user-friendly graphical user interfaces  and making a dedicated record center and guidance on creating, maintaining of records using database management system.
+                                        <br/>
+                                        <br/>
+                                        <b>Technology Used:</b>
+                                        <span>Java and MySQL</span>
+                                    </p>
+                                </div>
+                                <div class="workItemOptions">
+                                    <div class="spacer"></div>
+                                    <!-- <button class="showImageBtn">Images</button> -->
+                                    <button class="detailsBtn">Details</button>
+                                    <div class="spacer"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="workItem" style="background-image: url(assets/img/work/enrollment/enrollmentcover.jpg)">
+                        <div class="workBlocker">
+                            <div class="workItemTitle">
+                                <p>Enrollment System</p>
+                                <div class="workDescDiv">
+                                    <p class="workDesc">
+                                        <b>Description:</b>
+                                        <br/>
+                                        <br/>
+                                        &nbsp&nbsp&nbsp&nbsp&nbspAn Enrollment system written in java, this application is just a final project, it can only cover 1st to 2nd year Associate in Computer Technology Students, this app only store the records in an ArrayList. It can generate evaluation form, assessment form, Certificate of Registration, Payment Slip etc.
+                                        <br/>
+                                        <br/>
+                                        <b>Technology Used:</b>
+                                        <span>Java</span>
+                                    </p>
+                                </div>
+                                <div class="workItemOptions">
+                                    <div class="spacer"></div>
+                                    <!-- <button class="showImageBtn">Images</button> -->
+                                    <button class="detailsBtn">Details</button>
+                                    <div class="spacer"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="workItem" style="background-image: url(assets/img/work/multiplication/multiplicationcover.jpg)">
+                        <div class="workBlocker">
+                            <div class="workItemTitle">
+                                <p>Multiplication Tutor</p>
+                                <div class="workDescDiv">
+                                    <p class="workDesc">
+                                        <b>Description:</b>
+                                        <br/>
+                                        <br/>
+                                        &nbsp&nbsp&nbsp&nbsp&nbspA windows form application that can be use by kids to learn simple math. It can generate reports, can highlight answers that are wrong using red font color. It also has "How to play" function where children can look when they got throuble using the app.
+                                        <br/>
+                                        <br/>
+                                        <b>Technology Used:</b>
+                                        <span>Java</span>
+                                    </p>
+                                </div>
+                                <div class="workItemOptions">
+                                    <div class="spacer"></div>
+                                   
+                                    <button class="detailsBtn">Details</button>
+                                    <div class="spacer"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="workItem" style="background-image: url(assets/img/work/devees/deveescover.jpg)">
+                        <div class="workBlocker">
+                            <div class="workItemTitle">
+                                <p>Devees</p>
+                                <div class="workDescDiv">
+                                    <p class="workDesc">
+                                        <b>Description:</b>
+                                        <br/>
+                                        <br/>
+                                        &nbsp&nbsp&nbsp&nbsp&nbspIt's a social media web app for developers where they can post questions, like/dislike a post, comment a post and show their portfolio to showcase their skills.
+                                        <br/>
+                                        <br/>
+                                        <b>Technology Used:</b>
+                                        <span>NodeJS, ExpressJS, ReactJS, Redux and MongoDB</span>
+                                        <br/>
+                                        <br/>
+                                        <b>Note:</b>
+                                        <span>This website is the result of an online tutorial that I have followed</span>
+                                        <br/>
+                                        <br/>
+                                        <b>Credits:</b>
+                                        <span>https://github.com/bradtraversy/</span>
+                                    </p>
+                                </div>
+                                <div class="workItemOptions">
+                                    <div class="spacer"></div>
+                                    
+                                    <button class="detailsBtn">Details</button>
+                                    <a href="http://devees.herokuapp.com/" target="_blank">Visit Web Site</a>
+                                    <a href="https://github.com/KrishieldKyle/devees" target="_blank">Source Code</a>
+                                    <div class="spacer"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="workItem" style="background-image: url(assets/img/work/mangaxshield/mangaxshieldcover.jpg)">
+                        <div class="workBlocker">
+                            <div class="workItemTitle">
+                                <p>Manga X Shield (API got deactivated)</p>
+                                <div class="workDescDiv">
+                                    <p class="workDesc">
+                                        <b>Description:</b>
+                                        <br/>
+                                        <br/>
+                                        &nbsp&nbsp&nbsp&nbsp&nbspManga reader website where the user can browse, search and read manga.
+                                        <br/>
+                                        <br/>
+                                        <b>Technology Used:</b>
+                                        <span>ReactJS and Redux</span>
+                                        <br/>
+                                        <br/>
+                                        <b>Note:</b>
+                                        <span>The open source manga api that this website is using got deactivated, nevertheless you can check the source code from the link provided below</span>
+                                    </p>
+                                </div>
+                                <div class="workItemOptions">
+                                    <div class="spacer"></div>
+                                    
+                                    <button class="detailsBtn">Details</button>
+                                    <a href="http://mangaxshield.herokuapp.com/" target="_blank">Visit Web Site</a>
+                                    <a href="https://github.com/KrishieldKyle/mangaxshield" target="_blank">Source Code</a>
+                                    <div class="spacer"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="workItem" style="background-image: url(assets/img/work/capstone/capstonecover.jpg)">
+                        <div class="workBlocker">
+                            <div class="workItemTitle">
+                                <p>Plagiarism and Grammar Checker for BulSU Research Materials</p>
+                                <div class="workDescDiv">
+                                    <p class="workDesc">
+                                        <b>Description:</b>
+                                        <br/>
+                                        <br/>
+                                        &nbsp&nbsp&nbsp&nbsp&nbspThis system provides a repository for the research materials of Bulacan State University, to manage research materials, creation of librarian and administrator accounts, plagiarism checker, grammar checker and image to text converter.
+                                            This system serves as an upgrade to an already made system that the Bulacan State University uses as this system have a faster plagiarism checking using a modified version of the Sherlock algorithm, an android application, grammar and spelling checker which the current system does not have.
+                                        <br/>
+                                        <br/>
+                                        <b>Technology Used:</b>
+                                        <span>NodeJS, ExpressJS, ReactJS, Redux and MongoDB</span>
+                                    </p>
+                                </div>
+                                <div class="workItemOptions">
+                                    <div class="spacer"></div>
+                                    <!-- <button class="showImageBtn">Images</button> -->
+                                    <button class="detailsBtn">Details</button>
+                                    <a href="http://bulsu-capstone.herokuapp.com/" target="_blank">Visit Web Site</a>
+                                    <a href="https://github.com/KrishieldKyle/capstone" target="_blank">Source Code</a>
+                                    <div class="spacer"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <h1 class="titles">ABOUT</h1>
+        <div id="aboutDiv">
+            <div id="aboutImageDiv">
+                <img src="assets/avatar/profile.jpg" alt="Profile Image">
+            </div>
+            <div id="aboutBioDiv">
+                <!-- <div id="bio">
+                    <h2>BIO</h2>
+                    <p>Krishield Kyle Roslinda Santoyo is a tech guy who studied Bachelor in Industrial Technology Major in Computer Technology and Bachelor of Science in Information Technology. He has a good sense of humor, loves doing programming stuffs, reading manga and watching movies but getting lazy when doing stuffs that he do not like.<br/><br/>
+                        He lives in a peaceful place in Bulacan, got a big family with 3 elder siblings. 
+                    </p>
+                </div> -->
+                <div id="education">
+                    <h2>EDUCATIONAL BACKGROUND</h2>
+                    <div class="educationInfo">
+                        <h3>Tertiary:</h3>
+                        <h4>School: </h4>
+                        Bulacan State University<br/>
+                        <h4>Course: </h4>
+                        Bachelor of Science in Information Technology<br/>
+                        <h4>Date Graduated: </h4>
+                        June 10, 2019
+                    </div>
+                    <div class="educationInfo">
+                        <h3>Tertiary:</h3>
+                        <h4>School: </h4>
+                        Bulacan State University<br/>
+                        <h4>Course: </h4>
+                        Bachelor of Industrial Technology major in Computer Technology<br/>
+                        <h4>Date Graduated: </h4>
+                        April 7, 2015
+                    </div>
+                    <div class="educationInfo">
+                        <h3>Secondary:</h3>
+                        <h4>School: </h4>
+                        Doña Candelaria Meneses Duque High School<br/>
+                        <h4>Date Graduated: </h4>
+                        2013
+                    </div>
+                    <div class="educationInfo">
+                        <h3>Elementary:</h3>
+                        <h4>School: </h4>
+                        Bambang Elementary School<br/>
+                        <h4>Date Graduated: </h4>
+                        2009
+                    </div>
+                </div>
+                <div id="contact">
+                    <h2>CONTACT INFORMATION</h2>
+                    <div class="contactInfo">
+                        <h3>Email:</h3>
+                        krishieldkyle@gmail.com
+                    </div>
+                    <div class="contactInfo">
+                        <h3>Contact Number:</h3>
+                        (+63) 906-1036-901
+                    </div>
+                    <!-- <div class="contactInfo">
+                        <h3>Address:</h3>
+                        692 Waling waling St. San Nicolas Bulakan Bulacan
+                    </div> -->
+                    <div class="contactInfo">
+                            <h3>Download Resume:</h3>
+                            <a href="assets/resume/KRISHIELD_KYLE_SANTOYO.pdf" target="_blank">PDF</a>
+                        </div>
+                    <div id="social">
+                        <a href="https://github.com/KrishieldKyle" target="_blank" title="Github">
+                            <img src="assets/img/github.png" alt="github">
+                        </a>
+                        <!-- <a href="https://www.facebook.com/KriShieldKyle" target="_blank" title="Facebook">
+                            <img src="assets/img/facebook.png" alt="facebook">
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p id=copyRight></p>
+        <p>Krishield Kyle Roslinda Santoyo's Portfolio Website</p>
+    </footer>
+    <script src="js/index.js"></script>
+</body>
+</html>
